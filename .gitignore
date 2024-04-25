@@ -111,6 +111,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-# Docker
-!/docker-ubuntu-haskell/docker/ubuntu-haskell/Dockerfile
