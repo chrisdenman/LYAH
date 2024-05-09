@@ -1,6 +1,6 @@
 # Edit this line: echo "<your SSH public key>" > /home/haskell/.ssh/authorized_keys
 
-FROM ubuntu:latest
+FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get install nano openssh-server haskell-platform -y && \
