@@ -1,7 +1,58 @@
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+import Debug.Trace
+
 -- Raise x to the power y, using recursion
 -- For example, power 5 2 = 25
 power :: Int -> Int -> Int
-power x y = undefined
+power x y
+    | y < 0 = undefined
+    | y == 0 = 1
+    | y == 1 = x
+    | x == 0 = 0
+    | otherwise = x * (power x (pred y))
 
 -- create a list of length n of the fibbonaci sequence in reverse order
 -- examples: fib 0 = [0]
@@ -9,7 +60,11 @@ power x y = undefined
 --	     fib 10 = [55,34,21,13,8,5,3,2,1,1,0]	
 -- try to use a where clause
 fib :: (Num a, Eq a) => a -> [a]
-fib x = undefined
+fib x
+    | x == 0 = [0]
+    | x == 1 = [1, 0]
+    | otherwise = head previous + head (tail previous) : previous
+        where previous = fib (x - 1)
 
 -- This is not recursive, but have a go anyway.
 -- Create a function which takes two parameters, a number and a step
@@ -18,7 +73,9 @@ fib x = undefined
 --			    stepReverseSign -3 1 = 4
 --			    stepReverseSign 1 2 = -3
 stepReverseSign :: (Fractional a, Ord a) => a -> a -> a
-stepReverseSign a = undefined
+stepReverseSign a b
+    | a < 0 = b + abs a
+    | a >= 0 = -(b + abs a)
 
 {- Lets calculate pi.
  - The Leibniz formula for pi (http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80)
@@ -50,10 +107,17 @@ stepReverseSign a = undefined
  - 
  - You may find the stepReverseSign function handy
  -}
+--
+piCalc :: (Fractional a, Enum a, Ord a, Enum b, Integral b) => a -> (a, b)
+piCalc tolerance = swap (findAdjacent (\(e00, e01) (e10, e11) -> abs(e01 - e11) < tolerance) (zip [0..] (scanl (+) 0.0 [ 4 / m  | n <- [1,5..], m <- [n, -(n+2)]])))
 
-piCalc :: (Fractional a, Integral b, Ord a) => a -> (a, b)
-piCalc a = undefined
+findAdjacent :: (a -> a -> Bool) -> [a] -> a
+findAdjacent p [] = undefined
+findAdjacent p (x:[]) = undefined
+findAdjacent p l@(x:y:xs) =
+    if p x y
+    then x
+    else findAdjacent p (drop 1 l)
 
-piCalc' :: (Ord a, Fractional a, Integral b) => a -> a -> a -> b -> (a, b)
-piCalc' w x y z = undefined
-
+swap :: (a, b) -> (b, a)
+swap (x, y) = (y, x)
