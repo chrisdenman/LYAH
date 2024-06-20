@@ -52,7 +52,7 @@ class Hand a where
 
 -- Implement Hand for Card, where play returns true if the list contains the Ace of Spades
 instance Hand Card where
-    play c = elem Card {digit=DA, suit=Spades} c
+    play = elem Card {digit=DA, suit=Spades}
 
 -- Create a new Coin type
 data Coin = Heads | Tails
@@ -60,8 +60,8 @@ data Coin = Heads | Tails
 
 -- Implement Hand for Coin, where play returns true if there are ten heads in a row in the list
 instance Hand Coin where
-    play c = isInfixOf (replicate 10 Heads) c
+    play = isInfixOf (replicate 10 Heads)
 
 -- Have a play with implementing Hand for some other types, for instance Int and Bool
 instance Hand Int where
-    play c = isPrefixOf [1,2,3] c
+    play = isPrefixOf [1,2,3]
