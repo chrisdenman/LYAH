@@ -6,10 +6,11 @@ A collaborative work-through of [Learn You a Haskell](https://learnyouahaskell.g
 
 ### Docker
 
-To use [The Glasgow Haskell Compiler](https://www.haskell.org/ghc/) using Ubuntu on Docker via SSH read [this](docker-ubuntu-haskell/docker/README.md).
+To use the [Glasgow Haskell Compiler](https://www.haskell.org/ghc/) using Docker, see [this](docker-ubuntu-haskell/docker/README.md).
 
 ## Links
 
-- [Learn You A Haskell Exercises](https://github.com/noelmarkham/learn-you-a-haskell-exercises)
+- [Learn You A Haskell Exercises - gihub.com](https://github.com/noelmarkham/learn-you-a-haskell-exercises)
+- [Kinds and Higher-Kinded Types in Haskell - serokell.io](https://serokell.io/blog/kinds-and-hkts-in-haskell)
 
 #### License: [Unlicense](./LICENSE)
